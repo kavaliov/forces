@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Widget</title>
+</head>
+<body>
+<div id="wrapper">
+  <div class="point" data-point="INT3D-72">
+    <div class="title">Gravitational force</div>
+    <img  src="img/INT3D-72.0000.jpg" alt="">
+  </div>
+  <div class="point" data-point="INT3D-73">
+    <div class="title">Strong nuclear force</div>
+    <img src="img/INT3D-73.0000.jpg" alt="">
+  </div>
+  <div class="point" data-point="INT3D-74">
+    <div class="title">Weak nuclear force</div>
+    <img src="img/INT3D-74.0000.jpg" alt="">
+  </div>
+  <div class="point" data-point="INT3D-75">
+    <div class="title">Electromagnetic force</div>
+    <img src="img/INT3D-75.0000.jpg" alt="">
+  </div>
+</div>
+<div id="timeline-wrapper">
+  <button id="closeButton">
+    <span></span>&nbsp;Close
+  </button>
+  <div id="timeline"></div>
+</div>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+    .register('service-worker.js').then(() => {
+    });
+  }
+</script>
+</body>
+</html>
