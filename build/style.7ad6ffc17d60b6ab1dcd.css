@@ -13,6 +13,7 @@
 
 .timelineWrapper .view {
   margin: 0 auto;
+  min-height: 360px;
   display: block;
   border-top: 0;
 }
