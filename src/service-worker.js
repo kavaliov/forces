@@ -1,15 +1,14 @@
 import { precacheAndRoute } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
 import { CacheFirst } from "workbox-strategies";
-import manifest from "./manifest";
 
-precacheAndRoute([...self.__WB_MANIFEST, ...manifest]);
+precacheAndRoute([...self.__WB_MANIFEST, { url: "index.html", revision: Date.now() }]);
 
 self.skipWaiting();
 
 registerRoute(
   ({ url }) => {
-    const  match = url.pathname.match(/INT3D.*(?:png|jpe?g|gif|mp4|svg)/);
+    const match = url.pathname.match(/INT3D.*(?:png|jpe?g|gif|mp4|svg)/);
 
     if (match) {
       return !!match.length;
