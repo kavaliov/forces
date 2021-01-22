@@ -89,11 +89,9 @@ export default class Timeline {
   cacheImages() {
     const list = [];
     for (let i = 0; i < this.data.length; i++) {
-      fetch(this.data[i]).then((response) => {
-        caches.open("widget-cache").then((cache) => {
-          list.push(i);
-          this.setLoadingProgress(100 - (list.length / this.data.length * 100));
-        });
+      fetch(this.data[i]).then(() => {
+        list.push(i);
+        this.setLoadingProgress(100 - (list.length / this.data.length * 100));
       });
     }
   }
