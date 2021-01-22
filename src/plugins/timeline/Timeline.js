@@ -91,10 +91,8 @@ export default class Timeline {
     for (let i = 0; i < this.data.length; i++) {
       fetch(this.data[i]).then((response) => {
         caches.open("widget-cache").then((cache) => {
-          cache.put(this.data[i], response).then(() => {
-            list.push(i);
-            this.setLoadingProgress(100 - (list.length / this.data.length * 100));
-          });
+          list.push(i);
+          this.setLoadingProgress(100 - (list.length / this.data.length * 100));
         });
       });
     }
@@ -104,7 +102,7 @@ export default class Timeline {
     this.currentFrame = frame;
     this.rangeControl.value = frame;
     let image = new Image();
-    image.src = `./${this.framesFolder}/${this.namePattern}.${("000" + frame)
+    image.src = `.${this.framesFolder}/${this.namePattern}.${("000" + frame)
     .slice(-4)}.${this.fileExtension}`
     image.onload = () => {
       this.view.height = image.naturalHeight;
