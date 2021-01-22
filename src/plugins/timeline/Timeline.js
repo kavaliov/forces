@@ -81,7 +81,7 @@ export default class Timeline {
   generateFrameData() {
     for (let i = 0; i < this.framesCount; i++) {
       this.data
-      .push(`./${this.framesFolder}/${this.namePattern}.${("000" + i)
+      .push(`.${this.framesFolder}/${this.namePattern}.${("000" + i)
       .slice(-4)}.${this.fileExtension}`);
     }
   }

@@ -1,0 +1,1 @@
+export default [{ url: "index.html", revision: Date.now() }];
