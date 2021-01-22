@@ -9,9 +9,13 @@ self.skipWaiting();
 
 registerRoute(
   ({ url }) => {
-    const { pathname } = url;
-    console.log("match");
-    return pathname.match(/INT3D.*(?:png|jpe?g|gif|mp4|svg)/)
+    const  match = url.pathname.match(/INT3D.*(?:png|jpe?g|gif|mp4|svg)/);
+
+    if (match) {
+      return !!match.length;
+    }
+
+    return false;
   },
   new CacheFirst({ cacheName: "widget-cache" })
 );
